@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+   id="fr.edps.systemvolume"
+   version="0.1.1">
+    <name>System Volume</name>
+    <description>Cordova System Volume Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,audio,phonegap,volume</keywords>
+    <repo>https://github.com/jimibi/cordova-systemvolume.git</repo>
+
+    <js-module src="www/systemvolume.js" name="SystemVolume">
+        <clobbers target="window.system" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="SystemVolume">
+                <param name="android-package" value="fr.edps.systemvolume.SystemVolume"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/SystemVolume.java" target-dir="src/fr/edps/systemvolume" />     
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+       </config-file>
+        
+    </platform>          
+</plugin>
