@@ -12,6 +12,10 @@ Adding the Plugin to your project:
 ```bash
 cordova plugin add https://github.com/jimibi/cordova-systemvolume.git
 ```
+Removing the plugin to your proect:
+```bash
+cordova plugin rm fr.edps.systemvolume
+```
 
 ## Example
 
