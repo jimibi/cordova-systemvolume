@@ -1,3 +1,47 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="fr.edps.systemvolume"
+        version="0.1.2">
+
+  <name>System Volume</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/systemvolume.js" target="js/systemvolume.js"/>
+
+  <js-module src="www/hello.js" name="hello">
+    <clobbers target="window.system" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="SystemVolume">
+        <param name="android-package" value="fr.edps.plugin.systemvolume" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/systemVolume.java" target-dir="src/fr/edps/plugin/"/>
+  </platform>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/widget">
+      <feature name="Hello">
+        <param name="ios-package" value="HWPHello" />
+      </feature>
+    </config-file>
+    <header-file src="src/ios/HWPsystemVolume.h" target-dir="SystemVolume"/>
+    <source-file src="src/ios/HWPsystemVolume.m" target-dir="SystemVolume"/>
+  </platform>
+
+  <platform name="wp7">
+    <source-file src="src/wp7/systemVolume.cs"/>
+  </platform>
+</plugin>
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
@@ -29,3 +73,4 @@
         
     </platform>          
 </plugin>
+>>>>>>> origin/master
